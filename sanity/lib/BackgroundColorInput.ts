@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const BackgroundColorInput = ({ type, value, onChange }) => {
+const BackgroundColorInput = ({ type, value, onChange }:any) => {
   return (
     <div>
       <label>Background Color</label>
