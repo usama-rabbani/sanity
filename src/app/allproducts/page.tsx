@@ -75,9 +75,10 @@ export default function ProductSlider() {
                   <h1 className="text-xl font-semibold">Rs {product.price}</h1>
                   <p className="">{product.description}</p>
                   <Link href={`/product/${product.slug.current}`}>
+                    <ul>
                     <li className="cursor-pointer text-yellow-400 font-bold list-none">
                       Read More
-                    </li>
+                    </li></ul>
                   </Link>
                 </div>
               </div>
