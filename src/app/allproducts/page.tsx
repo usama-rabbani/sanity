@@ -26,7 +26,7 @@ export default function ProductSlider() {
  
   return (
     <main className='bg-black mt-0'>
-      <h1 className='text-white font-bold text-[50px] text-center pt-5 cursor-pointer'>Home Page / Slidder</h1>
+      <h1 className='font-bold text-[50px] text-center pt-5 cursor-pointer bg-gradient-to-r from-yellow-300 via-teal-600 to-red-700 text-transparent bg-clip-text bg-500% animate-gradient'>Home Page / Slidder</h1>
     <Swiper
     effect={'coverflow'}
     grabCursor={true}
