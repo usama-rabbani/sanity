@@ -8,14 +8,8 @@ import FetchData from "../../../sanity/lib/FetchData";
 import { urlForImage } from "../../../sanity/lib/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-// Initialize Swiper modules
-
-
 export default function ProductSlider() {
   const [data, setData] = useState([]);
-
-  // Fetch data asynchronously
   useEffect(() => {
     async function fetchData() {
       const products = await FetchData();
@@ -23,9 +17,10 @@ export default function ProductSlider() {
     }
     fetchData();
   }, []);
- 
+
   return (
-    <main className='bg-black mt-0'>
+    <div className='bg-black mt-0'>
+    <main className='lg:w-[1000px] items-center mx-auto max-w-screen-xl px-6 md:px-6'>
       <h1 className='font-bold text-[50px] text-center pt-5 cursor-pointer bg-gradient-to-r from-yellow-300 via-teal-600 to-red-700 text-transparent bg-clip-text bg-500% animate-gradient'>Home Page / Slidder</h1>
     <Swiper
     effect={'coverflow'}
@@ -47,7 +42,7 @@ export default function ProductSlider() {
       clickable: true,
     }}
     modules={[Pagination, EffectCoverflow]}
-    className="m-auto w-[1000px] cursor-pointer  "
+    className="m-auto  cursor-pointer  "
   >
       {data.map((product: any, index: number) => (
         <SwiperSlide key={index}>
@@ -57,8 +52,8 @@ export default function ProductSlider() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.9 }}
           >
-            <div className="grid grid-cols-1 gap-10 max-w-6xl m-auto mb-10 ">
-              <div className="w-[350px] h-[450px]  border-x-teal-300 border-[2px] border-y-yellow-300  mt-10 border p-2 bg-gradient-to-l from-teal-950 via-red-700  bg-gradient-to-r from-teal-600 via-red-700 to-green-950 rounded-[30px]">
+            <div className="grid lg:grid-cols-1 lg:gap-10 lg:max-w-6xl m-auto mb-10  ">
+              <div className="lg:w-[350px] lg:h-[450px]  border-x-teal-300 border-[2px] border-y-yellow-300  mt-10 border p-2 bg-gradient-to-l from-teal-950 via-red-700  bg-gradient-to-r from-teal-600 via-red-700 to-green-950 rounded-[30px]">
                 <motion.div
                   whileHover={{ scale: 1.5 }}
                   transition={{ duration: 0.8 }}
@@ -88,6 +83,7 @@ export default function ProductSlider() {
       ))}
     </Swiper>
     </main>
+    </div>
   );
 }
 

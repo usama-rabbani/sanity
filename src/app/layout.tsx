@@ -17,9 +17,6 @@ export default function RootLayout({
 
       <motion.div
   >
-   
-  
-  
         {children}
         </motion.div>
         </body>
